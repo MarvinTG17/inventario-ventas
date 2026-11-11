@@ -1,13 +1,12 @@
-import { useState } from 'react'
-import './App.css'
+import EstadoAPI from "./components/EstadoAPI";
 
 function App() {
 
-
   return (
-    <>
-      <p>Hola</p>
-    </>
+    <div>
+      <h1>Sistema de Inventario y Ventas</h1>
+      <EstadoAPI />
+    </div>
   )
 }
 
