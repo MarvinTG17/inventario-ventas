@@ -4,32 +4,26 @@ import { Routes, Route } from "react-router";
 import MainLayout from "./components/layout/MainLayout";
 import Dashboard from "./pages/Dashboard";
 import ModulePage from "./pages/ModulePage";
+import Productos from "./pages/Productos";
+import Categorias from "./pages/Categorias";
 
 
 export default function App() {
   return (
     <Routes>
       <Route element={<MainLayout />}>
-        <Route path="/" element={<Dashboard />} />
 
         <Route 
-          path="/productos"
-          element={
-            <ModulePage
-              titulo="Productos"
-              descripcion="Administración de productos y categorías"
-            />
-          }
-        />
+          path="/" 
+          element={<Dashboard />} />
+
+        <Route 
+          path="/productos" 
+          element={<Productos />} />
 
         <Route
-          path="/proveedores"
-          element={
-            <ModulePage
-              titulo="Proveedores"
-              descripcion="Administración de proveedores"
-            />
-          }
+          path="/productos/categorias"
+          element={<Categorias />}
         />
 
         <Route

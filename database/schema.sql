@@ -2,7 +2,8 @@
 -- 1. CATEGORÍAS
 CREATE TABLE categorias (
     id SERIAL PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL UNIQUE
+    nombre VARCHAR(100) NOT NULL UNIQUE,
+    estado BOOLEAN NOT NULL DEFAULT TRUE
 );
 
 -- 2. PRODUCTOS
@@ -23,7 +24,8 @@ CREATE TABLE proveedores (
     razon_social VARCHAR(150) NOT NULL,
     ruc VARCHAR(11) NOT NULL UNIQUE CHECK (ruc ~ '^[0-9]{11}$'),
     telefono VARCHAR(20),
-    correo VARCHAR(150)
+    correo VARCHAR(150),
+    estado BOOLEAN NOT NULL DEFAULT TRUE
 );
 
 -- 4. USUARIOS
@@ -32,8 +34,7 @@ CREATE TABLE usuarios (
     nombre VARCHAR(150) NOT NULL,
     correo VARCHAR(150) NOT NULL UNIQUE,
     password_hash TEXT NOT NULL,
-    rol VARCHAR(20) NOT NULL
-        CHECK (rol IN ('ADMIN', 'VENDEDOR')),
+    rol VARCHAR(20) NOT NULL CHECK (rol IN ('ADMIN', 'VENDEDOR')),
     estado BOOLEAN NOT NULL DEFAULT TRUE
 );
 
