@@ -7,11 +7,15 @@ import errorHandler from "./middlewares/errorHandler.js";
 const app = express();
 
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:5173" }));
 
-/*app.get("/api/health", (req, res) => {
-  res.json({ ok: true, message: "API funcionando correctamente" });
-});*/
+const origenesPermitidos = [
+  "http://localhost:5173",
+  process.env.FRONTEND_URL
+].filter(Boolean);
+
+app.use(cors({
+  origin: origenesPermitidos
+}));
 
 app.use("/api/categorias", categoriaRoutes);
 app.use("/api/productos", productoRoutes);

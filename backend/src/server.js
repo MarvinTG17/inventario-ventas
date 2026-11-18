@@ -31,6 +31,6 @@ if (process.env.NODE_ENV === "development") {
   });
 }
 
-app.listen(PORT, () => {
-  console.log(`Servidor en http://localhost:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Servidor iniciado en el puerto ${PORT}`);
 });

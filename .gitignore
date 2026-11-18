@@ -55,3 +55,8 @@ Thumbs.db
 # ARCHIVOS DE BASE DE DATOS
 # =====================================
 database/execute.sql
+
+# =====================================
+# ARCHIVOS DE NOTAS
+# =====================================
+notes.txt
